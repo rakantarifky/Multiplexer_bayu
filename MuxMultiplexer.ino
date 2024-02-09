@@ -31,7 +31,7 @@ void loop() {
   for (int channel = 0; channel < muxChannelCount; channel++) {
     setMuxChannel(channel);
 
-    if (digitalRead(muxSignalPin) == LOW) {
+    if (digitalRead(muxSignalPin) == HIGH) {
       sendNoteOn(channel + 48, readVelocity());  // mengirim note dari C1 hingga B2
       MidiUSB.flush();
       delay(100);
